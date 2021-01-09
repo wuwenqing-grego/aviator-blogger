@@ -10,8 +10,8 @@
     </template>
     <template v-else>
       <h1>Aviator</h1>
-      <i></i>
-      <img src="" alt="">
+      <i class="edit el-icon-edit"></i>
+      <img class="avatar" src="https://www.gravatar.com/avatar/1?s=128&d=identicon">
     </template>
   </header>
 </template>
@@ -38,6 +38,7 @@ export default {
     h1
       color: #fff
       margin-top: 60px
+      font-size: 40px
 
     p
       color: #fff
@@ -49,4 +50,22 @@ export default {
 
   header.login
     display: flex
+    align-items: center
+    background-color: base.$background-color
+
+    h1
+      color: #fff
+      font-size: 40px
+      flex: 1
+
+    .edit
+      color: #fff
+      font-size: 30px
+
+    .avatar
+      width: 40px
+      height: 40px
+      border: 1px solid #fff
+      border-radius: 50%
+      margin-left: 15px
 </style>

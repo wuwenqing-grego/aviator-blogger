@@ -11,6 +11,6 @@
     color: #666
     text-align: center
     padding: 10px
-    font-size: 13px
+    font-size: 15px
     align-self: end
 </style>
