@@ -4,25 +4,62 @@
       <h1>Aviator</h1>
       <p>Share every beautiful moment of your life</p>
       <div class="btns">
-        <el-button>Log In</el-button>
-        <el-button>Sign Up</el-button>
+        <router-link to="login">
+          <el-button>Log In</el-button>
+        </router-link>
+        <router-link to="register">
+          <el-button>Sign Up</el-button>
+        </router-link>
       </div>
     </template>
     <template v-else>
       <h1>Aviator</h1>
       <i class="edit el-icon-edit"></i>
-      <img class="avatar" src="https://www.gravatar.com/avatar/1?s=128&d=identicon">
+      <div class="user">
+        <img class="avatar" :src="user.avatar" :alt="user.username" :title="user.username">
+        <ul>
+          <li><router-link to="home">Home</router-link></li>
+          <li><a href="#" @click="onLogout">Logout</a></li>
+        </ul>
+      </div>
     </template>
   </header>
 </template>
 
 <script>
+import auth from '../api/auth'
+window.auth = auth
+
+import { mapGetters, mapActions } from 'vuex'
+
 export default {
   data() {
     return {
-      isLogin: false,
+
     }
-  }
+  },
+
+  computed: {
+    ...mapGetters([
+      'user',
+      'isLogin'
+    ])
+  },
+
+  created() {
+    this.checkLogin()
+  },
+
+  methods: {
+    ...mapActions([
+      'checkLogin',
+      'logout'
+    ]),
+
+    onLogout() {
+      this.logout()
+    }
+  },
 }
 </script>
 
@@ -62,10 +99,34 @@ export default {
       color: #fff
       font-size: 30px
 
-    .avatar
-      width: 40px
-      height: 40px
-      border: 1px solid #fff
-      border-radius: 50%
-      margin-left: 15px
+    .user
+      position: relative
+
+      .avatar
+        width: 40px
+        height: 40px
+        border: 1px solid #fff
+        border-radius: 50%
+        margin-left: 15px
+
+      ul
+        display: none
+        position: absolute
+        right: 0
+        list-style: none
+        border: 1px solid #eaeaea
+        background-color: #fff
+
+        a
+          text-decoration: none
+          color: #333
+          font-size: 12px
+          display: block
+          padding: 5px 10px
+
+          &:hover
+            background-color: #eaeaea
+
+      &:hover ul
+        display: block
 </style>

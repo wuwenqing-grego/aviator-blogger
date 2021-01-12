@@ -22,8 +22,8 @@ export default function request(url, method = 'GET', data = {}) {
         }
 
         axios(options).then(res => {
-            // console.log(res.data)
             if (res.data.status === 'ok') {
+                console.log(res.data)
                 if (res.data.token) {
                     localStorage.token = res.data.token
                 }
