@@ -1,7 +1,7 @@
 <template>
   <header :class="{login: isLogin, 'no-login': !isLogin}">
     <template v-if="!isLogin">
-      <h1>Aviator</h1>
+      <h1><router-link to="/">Aviator</router-link></h1>
       <p>Share every beautiful moment of your life</p>
       <div class="btns">
         <router-link to="login">
@@ -13,7 +13,7 @@
       </div>
     </template>
     <template v-else>
-      <h1>Aviator</h1>
+      <h1><router-link to="/">Aviator</router-link></h1>
       <i class="edit el-icon-edit"></i>
       <div class="user">
         <img class="avatar" :src="user.avatar" :alt="user.username" :title="user.username">
@@ -65,6 +65,7 @@ export default {
 
 <style scoped lang="sass">
   @use '../assets/base'
+  @use '../assets/common'
 
   header.no-login
     display: grid
@@ -73,9 +74,11 @@ export default {
     padding: 0 12% 30px 12%
 
     h1
-      color: #fff
-      margin-top: 60px
-      font-size: 40px
+      a
+        display: block
+        color: #fff
+        margin-top: 60px
+        font-size: 40px
 
     p
       color: #fff
@@ -83,7 +86,6 @@ export default {
 
     button
       margin: 20px 5px 0
-      color: #006600
 
   header.login
     display: flex
@@ -91,9 +93,11 @@ export default {
     background-color: base.$background-color
 
     h1
-      color: #fff
-      font-size: 40px
       flex: 1
+
+      a
+        color: #fff
+        font-size: 40px
 
     .edit
       color: #fff

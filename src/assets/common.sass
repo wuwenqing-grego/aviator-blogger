@@ -1,16 +1,40 @@
+@use './base'
+    
 *
     margin: 0
     padding: 0
+
+body
+    font: 14px/1.6 Arial,"Microsoft YaHei","黑体","宋体",sans-serif
+    color: #333
 
 html, body, #app
     height: 100%
 
 .el-button
     width: 100px
-//     height: 28px
-//     line-height: 28px
-//     font-size: 13px
-//     padding: 0 8px
-//     border-radius: 4px
-//     font-weight: normal
-//     border: none
+    color: base.$theme-color
+    border: 1px solid base.$theme-light-color
+    background: #ffffff
+    border-radius: 4px
+
+.el-button:hover
+    color: #ffffff
+    background-color: base.$theme-light-color
+
+input
+    line-height: 40px
+    border: 1px solid #eaeaea
+    padding: 0 10px
+    border-radius: 4px
+    outline: none
+
+input:focus
+    border-color: base.$theme-light-color
+
+a
+    text-decoration: none
+
+@media (max-width: 500px)
+    a
+        cursor: none
