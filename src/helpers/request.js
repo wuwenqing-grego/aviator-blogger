@@ -18,7 +18,7 @@ export default function request(url, method = 'GET', data = {}) {
         }
 
         if (localStorage.token) {
-            axios.defaults.headers.common['Authorization'] = localStorage.token
+            options.headers = { 'Authorization': localStorage.token }
         }
 
         axios(options).then(res => {
@@ -29,6 +29,7 @@ export default function request(url, method = 'GET', data = {}) {
                 }
                 resolve(res.data)
             } else {
+                console.log(res.data)
                 Message.error(res.data.msg)
                 reject(res.data)
             }

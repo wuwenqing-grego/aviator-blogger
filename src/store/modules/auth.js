@@ -43,12 +43,15 @@ const actions = {
     async checkLogin({ commit, state }) {
         if (state.isLogin) {return true}
 
-        const res = await auth.getInfo()
-        commit('setLogin', { isLogin: res.isLogin})
-
-        if (!res.isLogin) {return false}
-        commit('setUser', { user: res.data })
-        return true
+        try {
+            const res = await auth.getInfo()
+            commit('setLogin', { isLogin: true})
+            commit('setUser', { user: res.data })
+            return true
+        } catch (err) {
+            console.log(err)
+            return false
+        }
     },
 }
 
