@@ -45,7 +45,7 @@ export default {
   @media (max-width: 500px)
     #app
       grid-template-columns: 10px auto 10px
-
+  
       #header, #footer
         padding-left: 10px
         padding-right: 10px

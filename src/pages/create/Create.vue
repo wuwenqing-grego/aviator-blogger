@@ -5,8 +5,8 @@
     <el-input v-model="title" maxlength="30" show-word-limit></el-input>
     <p class="msg">Within 30 words</p>
     <h3>Abstract</h3>
-    <el-input type="textarea" v-model="abstract" rows="3" maxlength="30" show-word-limit></el-input>
-    <p class="msg">Within 30 words</p>
+    <el-input type="textarea" v-model="abstract" rows="3" maxlength="300" show-word-limit></el-input>
+    <p class="msg">Within 300 words</p>
     <h3>Content</h3>
     <el-input type="textarea" v-model="content" rows="20" maxlength="3000" show-word-limit></el-input>
     <p class="msg">Within 3000 words</p>

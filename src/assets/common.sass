@@ -37,11 +37,19 @@ input
 input:focus
     border-color: base.$theme-light-color
 
-.el-input.is-active .el-input__inner, .el-input__inner:focus, .el-textarea__inner:focus
+.el-input.is-active .el-input__inner, input.el-input__inner:focus, textarea.el-textarea__inner:focus
     border-color: base.$theme-light-color
+
+ul.el-pager
+    li.active, li:hover
+        color: base.$theme-color
+
+div.el-pagination button:hover
+    color: base.$theme-color
 
 a
     text-decoration: none
+    color: #333333
 
 @media (max-width: 500px)
     a
