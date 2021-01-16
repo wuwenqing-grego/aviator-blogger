@@ -4,22 +4,22 @@
       <h1><router-link to="/">Aviator</router-link></h1>
       <p>Share every beautiful moment of your life</p>
       <div class="btns">
-        <router-link to="login">
+        <router-link to="/login">
           <el-button>Log In</el-button>
         </router-link>
-        <router-link to="register">
+        <router-link to="/register">
           <el-button>Sign Up</el-button>
         </router-link>
       </div>
     </template>
     <template v-else>
       <h1><router-link to="/">Aviator</router-link></h1>
-      <i class="edit el-icon-edit"></i>
+      <router-link to="/create"><i class="edit el-icon-plus"></i></router-link>
       <div class="user">
         <img class="avatar" :src="user.avatar" :alt="user.username" :title="user.username">
         <ul>
-          <li><router-link to="home">Home</router-link></li>
-          <li><a href="#" @click="onLogout">Logout</a></li>
+          <li><router-link to="/home">Home</router-link></li>
+          <li><a href="/" @click="onLogout">Logout</a></li>
         </ul>
       </div>
     </template>
@@ -58,7 +58,6 @@ export default {
 
     onLogout() {
       this.logout()
-      this.$router.push({ path: '/' })
     }
   },
 }

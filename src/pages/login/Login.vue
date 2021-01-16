@@ -5,7 +5,7 @@
     <h4>Password</h4>
     <input v-model="password" type="password" placeholder="Password" @keyup.enter="onLogin">
     <el-button size="medium" @click="onLogin">Log In</el-button>
-    <p class="notice">No account? <router-link to="register">Register new account</router-link></p>
+    <p class="notice">No account? <router-link to="/register">Register new account</router-link></p>
   </div>
 </template>
 
