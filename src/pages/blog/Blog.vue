@@ -10,4 +10,4 @@
 </template>
 
 <script src="./blog.js"></script>
-<style lang="sass" scoped src="./blog.sass"></style>
+<style lang="sass" src="./blog.sass"></style>
