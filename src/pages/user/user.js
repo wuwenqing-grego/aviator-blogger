@@ -12,7 +12,7 @@ export default {
 
     created() {
         let userId = this.$route.params.userId
-        this.page = this.$route.query.page || 1
+        this.page = parseInt(this.$route.query.page) || 1
         blog.getBlogsByUserId(userId, { page: this.page }).then(res => {
             this.blogs = res.data
             this.page = res.page
@@ -30,7 +30,7 @@ export default {
                 this.blogs = res.data
                 this.page = res.page
                 this.total = res.total
-                this.$router.push({ path: '/', query: { page: newPage }})
+                this.$router.push({ path: `/user/${this.user.id}`, query: { page: newPage }})
             })
         },
 
