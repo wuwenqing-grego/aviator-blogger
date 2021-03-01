@@ -19,7 +19,7 @@
         <img class="avatar" :src="user.avatar" :alt="user.username" :title="user.username">
         <ul>
           <li><router-link to="/home">Home</router-link></li>
-          <li><a href="/" @click="onLogout">Logout</a></li>
+          <li><a href="/aviator-blogger" @click="onLogout">Logout</a></li>
         </ul>
       </div>
     </template>
