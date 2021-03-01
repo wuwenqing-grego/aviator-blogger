@@ -1,4 +1,4 @@
 module.exports = {
   lintOnSave: false,
-  publicPath: '/blog-demo/',
+  publicPath: process.env.NODE_ENV === 'production' ? '/aviator-blogger/' : '/',
 }
