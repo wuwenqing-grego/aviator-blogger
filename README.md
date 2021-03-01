@@ -1,4 +1,4 @@
-# blog-demo
+# aviator-blogger
 
 ## Project setup
 ```
